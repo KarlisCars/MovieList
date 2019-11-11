@@ -14,6 +14,8 @@
 		BC84042B2379E8B80045E58B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC8404292379E8B80045E58B /* LaunchScreen.storyboard */; };
 		BC8404332379E9B20045E58B /* MovieListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8404322379E9B20045E58B /* MovieListTableViewController.swift */; };
 		BC8404352379EA2C0045E58B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8404342379EA2C0045E58B /* DetailViewController.swift */; };
+		BC84043B2379EEB90045E58B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84043A2379EEB90045E58B /* DataManager.swift */; };
+		BC8404402379EFBD0045E58B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84043F2379EFBD0045E58B /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		BC84042C2379E8B80045E58B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC8404322379E9B20045E58B /* MovieListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewController.swift; sourceTree = "<group>"; };
 		BC8404342379EA2C0045E58B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BC84043A2379EEB90045E58B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		BC84043F2379EFBD0045E58B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +63,9 @@
 			isa = PBXGroup;
 			children = (
 				BC8404372379EA4E0045E58B /* Delegates */,
-				BC8404382379EA630045E58B /* Storyboards */,
+				BC8404392379EE8C0045E58B /* Data Manager */,
+				BC84043C2379EF780045E58B /* Model */,
+				BC8404382379EA630045E58B /* Views */,
 				BC8404362379EA3D0045E58B /* Controllers */,
 				BC8404272379E8B80045E58B /* Assets.xcassets */,
 				BC84042C2379E8B80045E58B /* Info.plist */,
@@ -85,13 +91,29 @@
 			path = Delegates;
 			sourceTree = "<group>";
 		};
-		BC8404382379EA630045E58B /* Storyboards */ = {
+		BC8404382379EA630045E58B /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				BC8404242379E8AF0045E58B /* Main.storyboard */,
 				BC8404292379E8B80045E58B /* LaunchScreen.storyboard */,
 			);
-			path = Storyboards;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BC8404392379EE8C0045E58B /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				BC84043A2379EEB90045E58B /* DataManager.swift */,
+			);
+			path = "Data Manager";
+			sourceTree = "<group>";
+		};
+		BC84043C2379EF780045E58B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC84043F2379EFBD0045E58B /* Movie.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +188,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC8404332379E9B20045E58B /* MovieListTableViewController.swift in Sources */,
+				BC84043B2379EEB90045E58B /* DataManager.swift in Sources */,
+				BC8404402379EFBD0045E58B /* Movie.swift in Sources */,
 				BC84041F2379E8AF0045E58B /* AppDelegate.swift in Sources */,
 				BC8404212379E8AF0045E58B /* SceneDelegate.swift in Sources */,
 				BC8404352379EA2C0045E58B /* DetailViewController.swift in Sources */,
