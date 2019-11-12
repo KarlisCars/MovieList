@@ -60,7 +60,7 @@ class DataManager{
         "12 Angry Men (1957) - Action",
         "Pulp Fiction (1994) - Action",
         "Schindler's List (1993) - History",
-        "The Dark Knight (2008) - Action ",
+        "The Dark Knight (2008) - Action",
         "The Godfather (1972) - Drama",
         "The Godfather- Part II (1974) - Drama",
         "The Lord of the Rings- The Return of the King (2003) - Drama",

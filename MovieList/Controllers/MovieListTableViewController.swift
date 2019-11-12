@@ -10,32 +10,58 @@ import UIKit
 
 class MovieListTableViewController: UITableViewController {
 
+    
+    var movies = Movie.createMovie() //This creates movies list from Model which takes dakes data from DataManager
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //This creates a navigation button. So that i can go back. Maybe?
 
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return movies.count-1//This counts how many movies i will have from Modal. So that it can make right amount of sections. Starts from 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movieList", for: indexPath)
 
-        // Configure the cell...
+        let movie = movies[indexPath.row]
+        cell.textLabel?.text = movie.movieName
+        cell.detailTextLabel?.text = movie.year
+        cell.detailTextLabel?.text = movie.genre
+        cell.imageView?.image = UIImage(named: movie.cover)
 
         return cell
     }
-    */
+    // MARK: - Table View Delegate
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    // Override to support rearranging the table view.
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        let currenMovie = movies.remove(at: fromIndexPath.row)
+        movies.insert(currenMovie, at: to.row)
+        tableView.reloadData()
+    }
+    // Don't understand fully this part
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -72,14 +98,18 @@ class MovieListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = tableView.indexPathForSelectedRow{
+            let detailVC = segue.destination as! DetailViewController
+            detailVC.movie = movies[indexPath.row]
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

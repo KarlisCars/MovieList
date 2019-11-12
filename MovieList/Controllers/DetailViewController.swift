@@ -9,11 +9,18 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
+    var movie: Movie!
+    
+    @IBOutlet weak var movieImageView: UIImageView!
+    
+    @IBOutlet weak var movieNameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        movieImageView.image = UIImage(named: movie.cover)
+        movieNameLabel.text = movie.movieName + " " + movie.year + " " + movie.genre
+        movieNameLabel.numberOfLines = 0
     }
     
 
